@@ -7,7 +7,7 @@ import "../../global.css";
 
 const TabIcon = ({ icon, color, name, focused }) => {
   return (
-    <View className="items-center justify-center gap-2">
+    <View className="items-center justify-center gap-2 mt-7">
       <Image
         source={icon}
         resizeMode="contain"
@@ -15,7 +15,7 @@ const TabIcon = ({ icon, color, name, focused }) => {
         className="w-6 h-6"
       ></Image>
       <Text
-        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+        className={`${focused ? "font-psemibold" : "font-pregular"} text-[9px]`}
         style={{ color: color }}
       >
         {name}
@@ -34,9 +34,9 @@ const TabLayout = () => {
           tabBarShowLabel: false,
           tabBarStyle: {
             backgroundColor: "#161622",
-            borderTopWidth: 1,
+            borderTopWidth: 0.5,
             borderTopColor: "#232533",
-            height: 84,
+            height: 80,
           },
         }}
       >
@@ -51,21 +51,6 @@ const TabLayout = () => {
                 icon={icons.home}
                 color={color}
                 name="Home"
-                focused={focused}
-              />
-            ),
-          }}
-        />
-        <Tabs.Screen
-          name="bookmark"
-          options={{
-            title: "Bookmark",
-            headerShown: false,
-            tabBarIcon: ({ color, focused }) => (
-              <TabIcon
-                icon={icons.bookmark}
-                color={color}
-                name="Bookmark"
                 focused={focused}
               />
             ),
